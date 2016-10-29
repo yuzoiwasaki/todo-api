@@ -14,13 +14,13 @@ class Todo < Sinatra::Base
   end
 
   get '/todos' do
-    @todos = Todo.order("created_at DESC").all
-    @todos.to_json
+    todos = Todo.order("created_at DESC").all
+    todos.to_json
   end
 
   get '/todos/:id' do
-    @todo = Todo.find_by(id: params[:id])
-    @todo.to_json
+    todo = Todo.find_by(id: params[:id])
+    todo.to_json
   end
 
   post '/todos/:id/status' do
