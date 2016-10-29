@@ -34,4 +34,7 @@ class TodoApi < Sinatra::Base
     status 200
   end
 
+  get '/*' do
+    'The page you were looking for doesn\'t  exist.'
+  end
 end
