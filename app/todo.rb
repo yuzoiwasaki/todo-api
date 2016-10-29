@@ -23,13 +23,13 @@ class Todo < Sinatra::Base
     @todo.to_json
   end
 
-  get '/todos/:id/:status' do
-    if params[:status] =~ /status=(\d)/
-      request_status = $1
-    end
+  post '/todos/:id/status' do
+    data = JSON.parse(request.body.read.to_s)
     todo = Todo.find_by(id: params[:id])
-    todo.status = request_status.to_i
+    todo.status = data['status'].to_i
     todo.save
+
+    status 200
   end
 
 end
