@@ -10,7 +10,7 @@ class Todo < Sinatra::Base
     root_path = File.expand_path(File.join(root, '..'))
     config = YAML.load_file(File.join(root_path, 'config', 'database.yml'))
     ActiveRecord::Base.establish_connection(
-      config[rack_env]
+      config[ENV['RACK_ENV']]
     )  
   end
 
