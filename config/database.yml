@@ -1,6 +1,6 @@
 development:
   adapter: mysql2
-  database: todo
+  database: database
   host: 127.0.0.1
   username: root
   password: password
