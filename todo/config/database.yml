@@ -1,0 +1,8 @@
+development
+  adapter: mysql2
+  database: todo
+  host: 127.0.0.1
+  username: root
+  password: password
+  encoding: utf8
+  pool: 5
