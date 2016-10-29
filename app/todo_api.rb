@@ -3,8 +3,9 @@ require 'active_record'
 require 'mysql2'
 require 'json'
 require 'yaml'
+require_relative 'models/todo'
 
-class Todo < Sinatra::Base
+class TodoApi < Sinatra::Base
 
   configure do
     root_path = File.expand_path(File.join(root, '..'))
@@ -15,7 +16,7 @@ class Todo < Sinatra::Base
   end
 
   get '/todos' do
-    todos = Todo.order("created_at DESC").all
+    todos = Todo.order("created_at DESC")
     todos.to_json
   end
 
