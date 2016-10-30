@@ -78,7 +78,6 @@ DEPENDENCIES
   mysql2 (~> 0.3.14)
   rack-test
   rspec
-  simplecov
   sinatra
 
 BUNDLED WITH
