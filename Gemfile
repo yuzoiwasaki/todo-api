@@ -10,4 +10,5 @@ group :test do
   gem 'factory_girl'
   gem 'rack-test'
   gem 'simplecov'
+  gem 'coveralls', require: false
 end
