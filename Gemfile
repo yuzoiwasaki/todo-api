@@ -1,8 +1,8 @@
 # A sample Gemfile
 source "https://rubygems.org"
 
-gem 'activerecord'
-gem 'mysql2'
+gem 'activerecord', '~> 4.0.2'
+gem 'mysql2', '~> 0.3.14'
 gem 'sinatra'
 
 group :test do
