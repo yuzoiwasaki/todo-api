@@ -11,4 +11,7 @@ RSpec.configure do |config|
   config.before(:all) do
     FactoryGirl.reload
   end
+  config.before :each do
+    Todo.destroy_all
+  end
 end
