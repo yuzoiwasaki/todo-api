@@ -1,4 +1,6 @@
 language: ruby
 rvm:
   - 2.2.0
+before_script:
+  - mysql -uroot < db/schema.sql
 script: bundle exec rspec
