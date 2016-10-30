@@ -8,4 +8,5 @@ gem 'sinatra'
 group :test do
   gem 'rspec'
   gem 'factory_girl'
+  gem 'rack-test'
 end
