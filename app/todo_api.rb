@@ -29,9 +29,9 @@ class TodoApi < Sinatra::Base
     data = JSON.parse(request.body.read.to_s)
     if data['status'].to_s == '0' || data['status'].to_s == '1'
       todo = Todo.find_by(id: params[:id])
+      return "TODOタスクが見つかりません" if todo.nil?
       todo.status = data['status'].to_i
       todo.save
-
       "ステータスを更新しました"
     else
       "リクエストが不正です"
