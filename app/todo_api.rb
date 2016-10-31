@@ -27,11 +27,15 @@ class TodoApi < Sinatra::Base
 
   post '/todos/:id/status' do
     data = JSON.parse(request.body.read.to_s)
-    todo = Todo.find_by(id: params[:id])
-    todo.status = data['status'].to_i
-    todo.save
+    if data['status'].to_s == '0' || data['status'].to_s == '1'
+      todo = Todo.find_by(id: params[:id])
+      todo.status = data['status'].to_i
+      todo.save
 
-    status 200
+      "ステータスを更新しました"
+    else
+      "リクエストが不正です"
+    end
   end
 
   get '/*' do
