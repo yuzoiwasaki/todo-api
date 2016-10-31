@@ -39,6 +39,15 @@ class TodoApi < Sinatra::Base
     end
   end
 
+  post '/todos' do
+    data = JSON.parse(request.body.read.to_s)
+    todo = Todo.new
+    todo.title = data['title']
+    todo.description = data['description']
+    todo.status = 0
+    todo.save
+  end
+
   get '/*' do
     'ページが見つかりません'
   end
