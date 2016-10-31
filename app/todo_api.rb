@@ -27,6 +27,7 @@ class TodoApi < Sinatra::Base
 
   post '/todos/:id/status' do
     data = JSON.parse(request.body.read.to_s)
+    # ステータス 0:未完了/1:完了、それ以外は不正なリクエストとみなす
     if %w(0 1).include?(data['status'].to_s)
       todo = Todo.find_by(id: params[:id])
       return "TODOタスクが見つかりません" if todo.nil?
