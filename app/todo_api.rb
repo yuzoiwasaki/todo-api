@@ -39,6 +39,6 @@ class TodoApi < Sinatra::Base
   end
 
   get '/*' do
-    'The page you were looking for doesn\'t  exist.'
+    'ページが見つかりません'
   end
 end
