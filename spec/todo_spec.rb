@@ -29,4 +29,10 @@ describe 'GET /todos/:id' do
     expect(updated_status).to eq 1
   end
 
+  it '新しくTODOタスクを登録できる' do
+    expect {
+      post "/todos", '{"title": "foo", "description": "bar"}'
+    }.to change{Todo.count}.from(0).to(1)
+  end
+
 end
