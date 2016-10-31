@@ -32,20 +32,25 @@ class TodoApi < Sinatra::Base
       todo = Todo.find_by(id: params[:id])
       return "TODOタスクが見つかりません" if todo.nil?
       todo.status = data['status'].to_i
-      todo.save
-      "ステータスを更新しました"
+      todo.save!
+      'ステータスを更新しました'
     else
-      "リクエストが不正です"
+      'リクエストが不正です'
     end
   end
 
   post '/todos' do
-    data = JSON.parse(request.body.read.to_s)
-    todo = Todo.new
-    todo.title = data['title']
-    todo.description = data['description']
-    todo.status = 0
-    todo.save
+    begin
+      data = JSON.parse(request.body.read.to_s)
+      todo = Todo.new
+      todo.title = data['title']
+      todo.description = data['description']
+      todo.status = 0
+      todo.save!
+      'タスクの作成が完了しました'
+    rescue ActiveRecord::RecordInvalid => e
+      e.message
+    end
   end
 
   get '/*' do
