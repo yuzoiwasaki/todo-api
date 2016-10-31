@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe 'GET /todos/:id' do
+describe Todo do
 
   def app
     @app = TodoApi
