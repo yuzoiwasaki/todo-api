@@ -3,7 +3,9 @@
 [![Build Status](https://travis-ci.org/yuzoiwasaki/todo-api.svg?branch=master)](https://travis-ci.org/yuzoiwasaki/todo-api)
 [![Coverage Status](https://coveralls.io/repos/github/yuzoiwasaki/todo-api/badge.svg?branch=master)](https://coveralls.io/github/yuzoiwasaki/todo-api?branch=master)
 
-iOS/AndroidのTODOアプリで使用するAPIの作成
+iOS/AndroidのTODOアプリで使用するAPI実装
+
+(Sinatra + MySQL + RSpec)
 
 ## API仕様
 
@@ -13,8 +15,28 @@ TODOは下記の3つの要素からなる
 - 説明
 - ステータス(未完了, 完了)
 
-下記の3つのAPIを作成する
+提供するAPI
 
 - TODO一覧取得API
 - TODO個別取得API
 - TODOステータス変更API
+- TODO新規作成API
+
+## 使い方
+
+### 各種gemのインストール
+```
+$ bundle install
+```
+
+### データベースのセットアップ
+```
+$ mysql -uroot < db/schema.sql
+```
+### アプリケーションの起動
+```
+$ bundle exec rackup
+```
+
+ブラウザで以下にアクセスします
+> http://127.0.0.1:9292/todos
