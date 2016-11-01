@@ -3,9 +3,7 @@
 [![Build Status](https://travis-ci.org/yuzoiwasaki/todo-api.svg?branch=master)](https://travis-ci.org/yuzoiwasaki/todo-api)
 [![Coverage Status](https://coveralls.io/repos/github/yuzoiwasaki/todo-api/badge.svg?branch=master)](https://coveralls.io/github/yuzoiwasaki/todo-api?branch=master)
 
-iOS/AndroidのTODOアプリで使用するAPI実装
-
-(Sinatra + MySQL + RSpec)
+iOS/AndroidのTODOアプリで使用するAPI実装(Sinatra + MySQL + RSpec)
 
 ## API仕様
 
@@ -38,4 +36,4 @@ $ mysql -uroot < db/schema.sql
 $ bundle exec rackup
 ```
 
-これで http://127.0.0.1:9292/todos でAPIにアクセスできるようになります。
+http://127.0.0.1:9292/todos からAPIにアクセスできます。
