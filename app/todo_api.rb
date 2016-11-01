@@ -32,7 +32,7 @@ class TodoApi < Sinatra::Base
       todo = Todo.find_by(id: params[:id])
       return "TODOタスクが見つかりません" if todo.nil?
       todo.status = data['status'].to_i
-      todo.save!
+      todo.save
       'ステータスを更新しました'
     else
       'リクエストが不正です'
