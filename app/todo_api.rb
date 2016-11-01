@@ -1,3 +1,4 @@
+# encoding: utf-8
 require 'sinatra/base'
 require 'active_record'
 require 'mysql2'

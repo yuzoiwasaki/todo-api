@@ -1,3 +1,4 @@
+# encoding: utf-8
 require 'coveralls'
 Coveralls.wear!
 ENV['RACK_ENV'] = 'test'
