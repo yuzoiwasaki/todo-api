@@ -7,7 +7,6 @@ require 'yaml'
 require_relative 'models/todo'
 
 class TodoApi < Sinatra::Base
-
   configure do
     root_path = File.expand_path(File.join(root, '..'))
     config = YAML.load_file(File.join(root_path, 'config', 'database.yml'))

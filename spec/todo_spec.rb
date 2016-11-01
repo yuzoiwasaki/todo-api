@@ -2,7 +2,6 @@
 require 'spec_helper'
 
 describe Todo do
-
   def app
     @app = TodoApi
   end
@@ -35,5 +34,4 @@ describe Todo do
       post "/todos", '{"title": "foo", "description": "bar"}'
     }.to change{Todo.count}.from(0).to(1)
   end
-
 end
