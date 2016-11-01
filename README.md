@@ -17,10 +17,10 @@ TODOは下記の3つの要素からなる
 
 提供するAPI
 
-- TODO一覧取得API
-- TODO個別取得API
-- TODOステータス変更API
-- TODO新規作成API
+- TODO一覧取得API(/todos)
+- TODO個別取得API(/todos/:id)
+- TODOステータス変更API({"status": 0 or 1}をパラメータとして/todos/:id/statusにPOST)
+- TODO新規作成API({"title": "foo", "description": "bar"をパラメータとして/todosにPOST)
 
 ## 使い方
 
@@ -38,5 +38,4 @@ $ mysql -uroot < db/schema.sql
 $ bundle exec rackup
 ```
 
-ブラウザで以下にアクセスします
-> http://127.0.0.1:9292/todos
+これで http://127.0.0.1:9292/todos でAPIにアクセスできるようになります。
