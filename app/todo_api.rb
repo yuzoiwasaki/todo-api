@@ -47,7 +47,8 @@ class TodoApi < Sinatra::Base
       todo.description = data['description']
       todo.status = 0
       todo.save!
-      'タスクの作成が完了しました'
+      res = {"id": todo.id, "msg": "タスクの作成が完了しました"}
+      res.to_json
     rescue ActiveRecord::RecordInvalid => e
       e.message
     end
